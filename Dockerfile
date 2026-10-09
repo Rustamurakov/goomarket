@@ -22,7 +22,7 @@ COPY server ./server
 COPY shared ./shared
 COPY scripts ./scripts
 COPY examples ./examples
-# Ma'lumotlar bazasi va yuklangan rasmlar shu papkada — hostingda doimiy diskka ulang
-VOLUME ["/data"]
+# Ma'lumotlar /data papkasida saqlanadi — doimiy disk hosting panelida
+# /data manziliga ulanadi (README, 4-bo'lim).
 EXPOSE 3000
 CMD ["node", "--disable-warning=ExperimentalWarning", "server/index.js"]
