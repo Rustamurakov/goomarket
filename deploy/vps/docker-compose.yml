@@ -1,0 +1,32 @@
+# =====================================================================
+#  VPS uchun (Railway ishlatilmasa): sayt + avtomatik HTTPS (Caddy).
+#  Ishga tushirish (loyiha papkasida):
+#    DOMAIN=goomarket.uz docker compose -f deploy/vps/docker-compose.yml up -d --build
+#  Domenning A yozuvi (@ va www) VPS IP manziliga qaratilgan bo'lishi kerak.
+# =====================================================================
+services:
+  app:
+    build: ../..
+    restart: unless-stopped
+    environment:
+      PUBLIC_URL: https://${DOMAIN:?DOMAIN ni kiriting, masalan DOMAIN=goomarket.uz}
+    volumes:
+      - ../../data:/data
+
+  caddy:
+    image: caddy:2-alpine
+    restart: unless-stopped
+    depends_on: [app]
+    ports:
+      - "80:80"
+      - "443:443"
+    environment:
+      DOMAIN: ${DOMAIN}
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy_data:/data
+      - caddy_config:/config
+
+volumes:
+  caddy_data:
+  caddy_config:

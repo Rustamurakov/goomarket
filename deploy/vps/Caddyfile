@@ -1,0 +1,12 @@
+# HTTPS sertifikati Let's Encrypt orqali avtomatik olinadi va yangilanadi.
+www.{$DOMAIN} {
+	redir https://{$DOMAIN}{uri} permanent
+}
+
+{$DOMAIN} {
+	encode gzip
+	request_body {
+		max_size 100MB
+	}
+	reverse_proxy app:3000
+}

@@ -1,0 +1,1284 @@
+/* =====================================================================
+   Mahsulot sahifasi, narx, chegirma va yuklanish holatlari
+   ===================================================================== */
+
+.product-title a {
+  color: inherit;
+}
+.product-title a::after {
+  /* butun kartochka matn qismini bosiladigan qilish uchun emas — faqat sarlavha */
+  content: none;
+}
+.product-title a:hover {
+  color: var(--brand-text);
+}
+.product-media {
+  display: block;
+}
+.product-desc {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* ---------- Narx ---------- */
+.price-tag {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.price-now {
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  font-variant-numeric: tabular-nums;
+}
+.price-now span {
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-2);
+  letter-spacing: 0;
+}
+.price-old-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.price-old {
+  color: var(--text-3);
+  font-size: 14px;
+  font-variant-numeric: tabular-nums;
+}
+.badge-discount {
+  display: inline-flex;
+  align-items: center;
+  padding: 3px 8px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 800;
+  color: #fff;
+  background: #e5345b;
+  font-variant-numeric: tabular-nums;
+}
+.badge-float {
+  position: absolute;
+  right: 14px;
+  top: 14px;
+}
+.price-lg .price-now {
+  font-size: clamp(30px, 7vw, 40px);
+}
+.price-lg .price-now span {
+  font-size: 18px;
+}
+.price-lg .price-old {
+  font-size: 17px;
+}
+.price-lg .badge-discount {
+  font-size: 14px;
+  padding: 4px 10px;
+}
+
+/* ---------- Yuklanish skeletlari ---------- */
+.sk {
+  display: block;
+  border-radius: 10px;
+  background: linear-gradient(90deg, var(--card) 0%, var(--card-2) 40%, var(--card) 80%);
+  background-size: 300% 100%;
+  animation: shimmer 1.4s ease-in-out infinite;
+}
+.sk-line {
+  height: 16px;
+  width: 80%;
+}
+.sk-line.short {
+  width: 50%;
+  margin-top: 8px;
+}
+.sk-title {
+  height: 36px;
+  width: 90%;
+  margin-top: 14px;
+}
+.sk-price {
+  height: 26px;
+  width: 40%;
+  margin-top: 22px;
+}
+.sk-btn {
+  height: 48px;
+  width: 100%;
+  margin-top: 16px;
+  border-radius: 999px;
+}
+.is-skeleton .product-media {
+  background: var(--card-2);
+}
+@keyframes shimmer {
+  to {
+    background-position: -150% 0;
+  }
+}
+
+/* ---------- Mahsulot sahifasi ---------- */
+.pd {
+  padding: 20px 0 48px;
+}
+.breadcrumbs {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 18px;
+  font-size: 13.5px;
+  color: var(--text-3);
+}
+.breadcrumbs a {
+  color: var(--text-2);
+  transition: color 0.2s;
+}
+.breadcrumbs a:hover {
+  color: var(--text);
+}
+.breadcrumbs a:last-child {
+  color: var(--text);
+}
+.pd-grid {
+  display: grid;
+  gap: 24px;
+}
+.pd-grid > * {
+  min-width: 0;
+}
+
+.pd-gallery {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.pd-main {
+  position: relative;
+  aspect-ratio: 4 / 5;
+  max-height: 68vh;
+  max-width: none; /* telefonda chetdan-chetga */
+  border-radius: var(--r-xl);
+  overflow: hidden;
+  background: #000;
+  border: 1px solid var(--line);
+  margin: 0 calc(var(--gutter) * -1);
+  border-radius: 0;
+  border-left: 0;
+  border-right: 0;
+}
+.pd-main > img,
+.pd-main > svg {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  animation: fade 0.3s ease;
+}
+.pd-main > img {
+  object-fit: contain;
+}
+.pd-nav {
+  position: absolute;
+  top: 50%;
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  margin-top: -22px;
+  border-radius: 50%;
+  color: #fff;
+  background: rgba(11, 11, 13, 0.6);
+  border: 1px solid var(--line-2);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  transition: background-color 0.2s;
+}
+.pd-nav:hover {
+  background: rgba(112, 0, 255, 0.7);
+}
+.pd-nav.prev {
+  left: 12px;
+}
+.pd-nav.prev .icon,
+.flip {
+  transform: scaleX(-1);
+}
+.pd-nav.next {
+  right: 12px;
+}
+.pd-counter {
+  position: absolute;
+  left: 50%;
+  bottom: 12px;
+  transform: translateX(-50%);
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 600;
+  background: rgba(11, 11, 13, 0.65);
+  font-variant-numeric: tabular-nums;
+}
+.pd-thumbs {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  padding-bottom: 4px;
+  scrollbar-width: thin;
+  contain: paint;
+}
+.pd-thumb {
+  flex: 0 0 64px;
+  height: 64px;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 2px solid transparent;
+  background: var(--card);
+  opacity: 0.65;
+  transition: opacity 0.2s, border-color 0.2s;
+}
+.pd-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.pd-thumb:hover {
+  opacity: 1;
+}
+.pd-thumb.is-active {
+  border-color: var(--brand);
+  opacity: 1;
+}
+
+.pd-info {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.pd-category {
+  align-self: flex-start;
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--brand-text);
+  background: var(--brand-soft);
+  border: 1px solid rgba(112, 0, 255, 0.3);
+}
+.pd-title {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(26px, 6.5vw, 42px);
+  line-height: 1.12;
+  letter-spacing: -0.035em;
+  text-wrap: balance;
+  overflow-wrap: anywhere;
+}
+.pd-save {
+  margin-top: -8px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #ff8aa3;
+}
+.pd-cta {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding-top: 4px;
+}
+.pd-cta .btn-buy {
+  width: 100%;
+}
+.pd-note {
+  display: flex;
+  gap: 8px;
+  align-items: flex-start;
+  font-size: 13.5px;
+  color: var(--text-2);
+}
+.pd-note .icon {
+  flex-shrink: 0;
+  margin-top: 3px;
+  color: var(--text-3);
+}
+.pd-soon {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  padding: 18px;
+  border-radius: var(--r-md);
+  border: 1px dashed var(--line-2);
+}
+.pd-soon strong {
+  font-size: 17px;
+}
+.pd-soon p {
+  color: var(--text-2);
+  font-size: 14.5px;
+  margin-bottom: 6px;
+}
+.pd-block {
+  padding-top: 20px;
+  border-top: 1px solid var(--line);
+}
+.pd-block h2 {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-3);
+  margin-bottom: 14px;
+}
+.pd-desc p {
+  color: var(--text-2);
+  font-size: 16px;
+  line-height: 1.7;
+  max-width: 65ch;
+}
+.pd-desc p + p {
+  margin-top: 12px;
+}
+.feature-list {
+  display: grid;
+  border-radius: var(--r-md);
+  border: 1px solid var(--line);
+  overflow: hidden;
+}
+.feature-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 13px 16px;
+  font-size: 15px;
+  background: var(--card);
+}
+.feature-row + .feature-row {
+  border-top: 1px solid var(--line);
+}
+.feature-row span {
+  color: var(--text-2);
+}
+.feature-row strong {
+  font-weight: 600;
+  text-align: right;
+  overflow-wrap: anywhere;
+}
+.feature-row.is-single {
+  justify-content: flex-start;
+  align-items: center;
+}
+.feature-row.is-single strong {
+  text-align: left;
+}
+.feature-row.is-single .icon {
+  flex-shrink: 0;
+  color: var(--brand-text);
+}
+.pd-back {
+  align-self: flex-start;
+  margin-top: 8px;
+}
+.pd-missing .btn-row {
+  margin-top: 28px;
+}
+
+/* Telefondagi pastki xarid paneli */
+.buybar {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 30;
+  padding: 10px var(--gutter) calc(10px + env(safe-area-inset-bottom, 0px));
+  background: rgba(21, 21, 25, 0.92);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-top: 1px solid var(--line-2);
+  transform: translateY(110%);
+  transition: transform 0.35s var(--ease);
+}
+.buybar.is-visible {
+  transform: none;
+}
+.buybar-inner {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  max-width: 1240px;
+  margin: 0 auto;
+}
+.buybar-info {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  flex: 1;
+}
+.buybar-info span {
+  font-size: 13px;
+  color: var(--text-2);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.buybar-info strong {
+  font-size: 17px;
+  font-variant-numeric: tabular-nums;
+}
+.buybar-spacer {
+  height: 84px;
+}
+.buybar .btn-buy {
+  width: auto;
+  flex-shrink: 0;
+  min-height: 50px;
+  padding: 0 18px;
+  box-shadow: var(--glow);
+}
+.buybar .btn-buy .icon {
+  flex-shrink: 0;
+}
+/* Telefonda: tepada nom va narx, pastda butun kenglikdagi tugma */
+.buybar-info strong {
+  white-space: nowrap;
+}
+@media (max-width: 520px) {
+  .buybar {
+    padding-top: 8px;
+  }
+  .buybar-inner {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 6px;
+  }
+  .buybar-info {
+    flex-direction: row;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 10px;
+  }
+  .buybar-info span {
+    font-size: 13px;
+  }
+  .buybar-info strong {
+    font-size: 16px;
+  }
+  .buybar .btn-buy {
+    width: 100%;
+    min-height: 50px;
+    font-size: 15.5px;
+  }
+  .buybar-spacer {
+    height: 112px;
+  }
+}
+
+/* Ko'rgazma rejimi bannerі */
+.preview-banner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 8px 12px;
+  padding: 8px var(--gutter);
+  font-size: 13px;
+  line-height: 1.4;
+  color: #f3dcae;
+  background: #2a2112;
+  border-bottom: 1px solid rgba(255, 186, 60, 0.3);
+  text-align: center;
+}
+.preview-banner .icon {
+  color: #ffc861;
+  flex-shrink: 0;
+}
+.preview-banner a {
+  font-weight: 700;
+  color: #ffd27a;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+@media (min-width: 640px) {
+  .pd-main {
+    margin: 0;
+    max-width: 100%;
+    border-radius: var(--r-xl);
+    border: 1px solid var(--line);
+  }
+  .pd-cta .btn-buy {
+    width: auto;
+    align-self: flex-start;
+  }
+}
+
+@media (min-width: 1024px) {
+  .pd {
+    padding: 32px 0 72px;
+  }
+  .pd-grid {
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+    gap: 56px;
+    align-items: start;
+  }
+  .pd-gallery {
+    position: sticky;
+    top: calc(var(--header-h) + 24px);
+  }
+  .pd-thumb {
+    flex-basis: 80px;
+    height: 80px;
+  }
+  .pd-info {
+    gap: 20px;
+    padding-top: 8px;
+  }
+  .buybar-inner {
+    padding: 2px 0;
+  }
+  .buybar-info strong {
+    font-size: 19px;
+  }
+}
+
+/* Ko'rgazma rejimi: admin panelga suzib turuvchi tugma */
+.preview-admin-btn {
+  position: fixed;
+  left: 16px;
+  bottom: calc(92px + env(safe-area-inset-bottom, 0px));
+  z-index: 35;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 48px;
+  padding: 0 18px;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 15px;
+  color: #1a1206;
+  background: #ffc861;
+  box-shadow: 0 12px 30px -10px rgba(0, 0, 0, 0.8);
+}
+.preview-admin-btn:hover {
+  background: #ffd27a;
+}
+@media (min-width: 1024px) {
+  .preview-admin-btn {
+    bottom: 24px;
+    left: 24px;
+  }
+}
+
+/* =====================================================================
+   LANDING SAHIFA BO'LIMLARI
+   ===================================================================== */
+.pd-tagline {
+  margin-top: -6px;
+  font-size: 17px;
+  line-height: 1.5;
+  color: var(--text-2);
+  max-width: 46ch;
+}
+.pd-proof {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+.pd-proof-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-size: 13.5px;
+  color: var(--text-2);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--line);
+}
+.pd-proof-item b {
+  color: var(--text);
+  font-variant-numeric: tabular-nums;
+}
+.stars {
+  position: relative;
+  display: inline-block;
+  font-size: 14px;
+  line-height: 1;
+  letter-spacing: 1px;
+}
+.stars-base {
+  color: rgba(255, 255, 255, 0.18);
+}
+.stars-fill {
+  position: absolute;
+  left: 0;
+  top: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  color: #ffc861;
+}
+.pd-pricebox {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding-top: 4px;
+}
+.pd-save {
+  margin-top: 0;
+}
+.pd-trust {
+  display: grid;
+  gap: 10px;
+  padding: 16px;
+  border-radius: var(--r-md);
+  background: var(--card);
+  border: 1px solid var(--line);
+}
+.pd-trust li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  color: var(--text-2);
+}
+.pd-trust .icon {
+  flex-shrink: 0;
+  color: var(--brand-text);
+}
+.pd-video-jump {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  align-self: flex-start;
+  font-weight: 700;
+  font-size: 15px;
+}
+.pd-video-jump:hover {
+  color: var(--brand-text);
+}
+.pd-dots {
+  position: absolute;
+  left: 50%;
+  bottom: 14px;
+  display: flex;
+  gap: 6px;
+  transform: translateX(-50%);
+}
+.pd-dots span {
+  width: 6px;
+  height: 6px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.35);
+  transition: width 0.25s var(--ease), background-color 0.25s;
+}
+.pd-dots span.is-active {
+  width: 18px;
+  background: #fff;
+}
+
+.lp-title {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(26px, 6.6vw, 48px);
+  line-height: 1.08;
+  letter-spacing: -0.035em;
+  text-wrap: balance;
+}
+.lp-head {
+  margin-bottom: 24px;
+}
+
+/* Statistika */
+.lp-stats {
+  padding: 40px 0;
+  background: radial-gradient(80% 140% at 50% 0%, rgba(112, 0, 255, 0.22), transparent 70%), var(--bg-2);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  text-align: center;
+}
+.lp-stats .eyebrow {
+  justify-content: center;
+}
+.lp-stats .eyebrow::before {
+  display: none;
+}
+.lp-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(var(--n, 3), minmax(0, 1fr));
+  gap: 8px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+.lp-stats-grid.n-1 {
+  --n: 1;
+}
+.lp-stats-grid.n-2 {
+  --n: 2;
+}
+.lp-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  min-width: 0;
+}
+.lp-stat strong {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(26px, 8vw, 60px);
+  line-height: 1;
+  letter-spacing: -0.04em;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+.lp-stat span {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  font-size: 13px;
+  color: var(--text-2);
+}
+.lp-stats-source {
+  display: inline-flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  margin-top: 22px;
+  font-size: 13px;
+  color: var(--text-3);
+}
+.lp-stats-source a {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-weight: 700;
+  color: var(--brand-text);
+}
+
+/* Video */
+.lp-video {
+  padding: 56px 0;
+}
+.lp-video-frame {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: var(--r-xl);
+  background: #000;
+  border: 1px solid var(--line);
+}
+.lp-video-frame video {
+  display: block;
+  width: 100%;
+  max-height: 80vh;
+  background: #000;
+}
+.lp-video-frame.is-youtube {
+  aspect-ratio: 16 / 9;
+}
+.lp-video-frame iframe,
+.lp-video-facade {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+.lp-video-facade img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.85;
+}
+.lp-play {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  display: grid;
+  place-items: center;
+  width: 76px;
+  height: 76px;
+  margin: -38px 0 0 -38px;
+  border-radius: 50%;
+  color: #fff;
+  background: var(--brand);
+  box-shadow: 0 0 0 10px rgba(112, 0, 255, 0.25), var(--glow);
+  transition: transform 0.25s var(--ease);
+}
+.lp-play .icon {
+  margin-left: 4px;
+}
+.lp-video-facade:hover .lp-play {
+  transform: scale(1.06);
+}
+.lp-play.sm {
+  position: static;
+  width: 34px;
+  height: 34px;
+  margin: 0;
+  box-shadow: 0 0 0 5px rgba(112, 0, 255, 0.2);
+}
+.lp-play.sm .icon {
+  margin-left: 2px;
+}
+.lp-video-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 12px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-2);
+}
+
+/* Afzalliklar: rasm + matn bo'limlari (rasmlar qora fonda — sahifa bilan qo'shilib ketadi) */
+.lp-stories {
+  background: #000;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+.lp-story {
+  padding: 8px 0 40px;
+}
+.lp-story + .lp-story {
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  padding-top: 40px;
+}
+.lp-story-grid {
+  display: grid;
+  gap: 20px;
+  align-items: center;
+}
+.lp-story-media {
+  display: grid;
+  gap: 10px;
+  margin: 0 calc(var(--gutter) * -1);
+}
+.lp-story-media img {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  max-height: 78vh;
+  object-fit: contain;
+  background: #000;
+}
+.lp-story.is-duo .lp-story-media {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin: 0;
+}
+.lp-story.is-duo .lp-story-media img {
+  object-fit: cover;
+  border-radius: var(--r-md);
+}
+.lp-story-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  min-width: 0;
+}
+.lp-story-copy p {
+  font-size: 17px;
+  line-height: 1.65;
+  color: var(--text-2);
+  max-width: 52ch;
+}
+.lp-story.is-text {
+  text-align: center;
+}
+.lp-story.is-text .lp-story-copy {
+  align-items: center;
+}
+
+/* Batafsil, yordam, yakuniy */
+.lp-details .lp-title {
+  margin-bottom: 24px;
+}
+.lp-details-grid {
+  display: grid;
+  gap: 24px;
+}
+.lp-details .pd-block {
+  border-top: 0;
+  padding-top: 0;
+}
+.lp-details .pd-block h3 {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-3);
+  margin-bottom: 14px;
+}
+.lp-help {
+  background: var(--bg-2);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+.lp-help-grid {
+  display: grid;
+  gap: 40px;
+}
+.lp-help .lp-title {
+  font-size: clamp(24px, 5.6vw, 36px);
+  margin-bottom: 20px;
+}
+.faq {
+  display: grid;
+  gap: 10px;
+}
+.faq-item {
+  border-radius: var(--r-md);
+  background: var(--card);
+  border: 1px solid var(--line);
+  transition: border-color 0.2s;
+}
+.faq-item[open] {
+  border-color: rgba(112, 0, 255, 0.45);
+}
+.faq-item summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 16px 18px;
+  font-weight: 700;
+  font-size: 15.5px;
+  cursor: pointer;
+  list-style: none;
+}
+.faq-item summary::-webkit-details-marker {
+  display: none;
+}
+.faq-item summary .icon {
+  flex-shrink: 0;
+  color: var(--brand-text);
+  transition: transform 0.25s var(--ease);
+}
+.faq-item[open] summary .icon {
+  transform: rotate(45deg);
+}
+.faq-item p {
+  padding: 0 18px 18px;
+  color: var(--text-2);
+  font-size: 15px;
+  line-height: 1.6;
+}
+.lp-final {
+  display: grid;
+  gap: 20px;
+  padding: 20px;
+  border-radius: var(--r-xl);
+  background: radial-gradient(120% 120% at 100% 0%, rgba(112, 0, 255, 0.35), transparent 60%), var(--card);
+  border: 1px solid rgba(112, 0, 255, 0.35);
+  overflow: hidden;
+}
+.lp-final-media {
+  aspect-ratio: 1;
+  max-width: 100%;
+  border-radius: var(--r-lg);
+  overflow: hidden;
+  background: #000;
+}
+.lp-final-media img,
+.lp-final-media svg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.lp-final-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  min-width: 0;
+}
+.lp-final-copy .eyebrow {
+  margin-bottom: 0;
+}
+.lp-final-copy .btn-buy {
+  width: 100%;
+}
+
+/* Katalog kartochkasidagi ijtimoiy isbot */
+.product-proof {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 8px;
+  font-size: 13px;
+  color: var(--text-2);
+}
+.product-proof b {
+  color: var(--text);
+  font-variant-numeric: tabular-nums;
+}
+.product-proof .stars {
+  font-size: 12px;
+}
+
+@media (min-width: 640px) {
+  .pd-main {
+    aspect-ratio: 4 / 5;
+    max-height: none;
+  }
+  .lp-story-media {
+    margin: 0;
+  }
+  .lp-story-media img {
+    border-radius: var(--r-xl);
+  }
+  .lp-help-grid {
+    gap: 48px;
+  }
+  .lp-final {
+    grid-template-columns: 240px minmax(0, 1fr);
+    align-items: center;
+    padding: 28px;
+  }
+  .lp-final-copy .btn-buy {
+    width: auto;
+    align-self: flex-start;
+  }
+}
+
+@media (min-width: 1024px) {
+  .pd-grid {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  }
+  .pd-main {
+    max-height: calc(100vh - var(--header-h) - 140px);
+    margin: 0 auto;
+    width: auto;
+  }
+  .lp-stats {
+    padding: 64px 0;
+  }
+  .lp-video {
+    padding: 96px 0;
+  }
+  .lp-video .lp-head {
+    text-align: center;
+  }
+  .lp-video .eyebrow::before {
+    display: none;
+  }
+  .lp-video-frame {
+    max-width: 960px;
+    margin: 0 auto;
+  }
+  .lp-video-link {
+    display: flex;
+    justify-content: center;
+  }
+  .lp-story,
+  .lp-story + .lp-story {
+    padding: 72px 0;
+  }
+  .lp-story-grid {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 72px;
+  }
+  .lp-story.is-reverse .lp-story-media {
+    order: 2;
+  }
+  .lp-story.is-text .lp-story-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .lp-story-media img {
+    max-height: 760px;
+  }
+  .lp-story-copy p {
+    font-size: 18px;
+  }
+  .lp-details-grid {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 48px;
+  }
+  .lp-details-grid.is-single {
+    grid-template-columns: minmax(0, 720px);
+  }
+  .lp-help-grid {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 64px;
+  }
+  .lp-final {
+    grid-template-columns: 320px minmax(0, 1fr);
+    gap: 48px;
+    padding: 40px;
+  }
+}
+
+/* Doimiy xarid paneli uchun sahifa pastida joy */
+body.has-buybar .site-footer {
+  padding-bottom: calc(110px + env(safe-area-inset-bottom, 0px));
+}
+body.has-buybar .preview-admin-btn {
+  bottom: calc(132px + env(safe-area-inset-bottom, 0px));
+}
+@media (min-width: 521px) {
+  body.has-buybar .site-footer {
+    padding-bottom: calc(100px + env(safe-area-inset-bottom, 0px));
+  }
+  body.has-buybar .preview-admin-btn {
+    bottom: 100px;
+  }
+}
+
+/* =====================================================================
+   TAQQOSLASH: arzon analog va premium mahsulot
+   ===================================================================== */
+.lp-compare-head {
+  text-align: center;
+}
+.lp-compare-head .eyebrow {
+  justify-content: center;
+}
+.lp-compare-head .eyebrow::before {
+  display: none;
+}
+.cmp {
+  max-width: 880px;
+  margin: 0 auto;
+}
+.cmp-row {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+.cmp-top {
+  margin-bottom: 18px;
+}
+.cmp-col {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 12px 16px;
+  border-radius: var(--r-lg);
+  text-align: center;
+  min-width: 0;
+}
+.cmp-col strong {
+  font-size: 15px;
+  line-height: 1.3;
+}
+.cmp-col.is-cheap {
+  background: var(--card);
+  border: 1px solid var(--line);
+}
+.cmp-col.is-cheap strong {
+  color: var(--text-2);
+}
+.cmp-col.is-cheap .cmp-media {
+  filter: grayscale(1) brightness(0.75);
+}
+.cmp-col.is-premium {
+  background: linear-gradient(180deg, rgba(112, 0, 255, 0.28), rgba(112, 0, 255, 0.06)), var(--card);
+  border: 1.5px solid var(--brand);
+  box-shadow: var(--glow);
+}
+.cmp-badge {
+  position: absolute;
+  top: -11px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 3px 10px;
+  border-radius: 999px;
+  font-size: 11.5px;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+  color: #fff;
+  background: var(--brand);
+}
+.cmp-media {
+  width: 100%;
+  aspect-ratio: 1;
+  max-width: 100%;
+  border-radius: var(--r-md);
+  overflow: hidden;
+  background: #000;
+}
+.cmp-media img,
+.cmp-media svg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.cmp-group + .cmp-group {
+  margin-top: 14px;
+}
+.cmp-aspect {
+  margin-bottom: 8px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-align: center;
+  color: var(--text-3);
+}
+.cmp-cell {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  padding: 12px;
+  border-radius: var(--r-sm);
+  font-size: 14px;
+  line-height: 1.45;
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+.cmp-cell.is-cheap {
+  color: var(--text-2);
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--line);
+}
+.cmp-cell.is-premium {
+  font-weight: 600;
+  background: var(--brand-soft);
+  border: 1px solid rgba(112, 0, 255, 0.4);
+}
+.cmp-mark {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  margin-top: 1px;
+  border-radius: 50%;
+}
+.cmp-mark.no {
+  color: #ff8aa3;
+  background: rgba(229, 52, 91, 0.15);
+}
+.cmp-mark.yes {
+  color: #0b0b0d;
+  background: #59d98e;
+}
+@media (min-width: 640px) {
+  .cmp-row {
+    gap: 16px;
+  }
+  .cmp-col {
+    padding: 16px 16px 20px;
+  }
+  .cmp-col strong {
+    font-size: 17px;
+  }
+  .cmp-media {
+    max-width: 260px;
+  }
+  .cmp-cell {
+    padding: 14px 16px;
+    font-size: 15px;
+  }
+}

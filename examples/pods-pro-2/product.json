@@ -1,0 +1,130 @@
+{
+  "_izoh": "Pods Pro 2 Premium uchun tayyor landing ma'lumotlari. Import: npm run import-example. Narx va Uzum havolasi import paytida so'raladi.",
+  "nameUz": "Pods Pro 2 Premium",
+  "nameRu": "Pods Pro 2 Premium",
+  "slug": "pods-pro-2-premium",
+  "category": "earbuds",
+  "mainImage": "01-case.webp",
+  "gallery": [
+    "02-buds.webp",
+    "03-anc.webp",
+    "04-tips.webp"
+  ],
+  "taglineUz": "Faol shovqinni qaytaruvchi simsiz quloqchinlar — g‘ilofi bilan birga",
+  "taglineRu": "Беспроводные наушники с активным шумоподавлением — в комплекте с кейсом",
+  "soldCount": 27000,
+  "reviewCount": 10000,
+  "rating": null,
+  "features": [
+    {
+      "uz": "Turi: Simsiz, quloq ichiga",
+      "ru": "Тип: Беспроводные, внутриканальные"
+    },
+    {
+      "uz": "Shovqinni qaytarish: Faol (ANC)",
+      "ru": "Шумоподавление: Активное (ANC)"
+    },
+    {
+      "uz": "Quloq yostiqchalari: XS, S, M, L",
+      "ru": "Амбушюры: XS, S, M, L"
+    },
+    {
+      "uz": "To‘plamda: Quloqchinlar va g‘ilof",
+      "ru": "Комплект: Наушники и кейс"
+    }
+  ],
+  "descUz": "Pods Pro 2 Premium — har kungi foydalanish uchun simsiz quloqchinlar. Faol shovqinni qaytarish atrofdagi shovqinni pasaytiradi, to‘rt xil o‘lchamdagi yostiqchalar esa quloqqa qulay va mahkam o‘tirishiga yordam beradi.\n\nQuloqchinlar g‘ilofi bilan birga keladi — ularni saqlash va doim o‘zingiz bilan olib yurish oson.",
+  "descRu": "Pods Pro 2 Premium — беспроводные наушники на каждый день. Активное шумоподавление приглушает окружающий шум, а амбушюры четырёх размеров помогают наушникам сидеть удобно и надёжно.\n\nНаушники поставляются в кейсе — их удобно хранить и всегда носить с собой.",
+  "sections": [
+    {
+      "images": [
+        "03-anc.webp"
+      ],
+      "titleUz": "Faol shovqinni qaytarish",
+      "titleRu": "Активное шумоподавление",
+      "textUz": "Atrofdagi shovqin pasayadi — transportda, ko‘chada yoki ofisda musiqa, podkast va qo‘ng‘iroqlarga to‘liq e’tibor qaratasiz.",
+      "textRu": "Окружающий шум становится тише — в транспорте, на улице или в офисе вы полностью погружаетесь в музыку, подкасты и звонки."
+    },
+    {
+      "images": [
+        "04-tips.webp"
+      ],
+      "titleUz": "XS, S, M, L — o‘zingizga mos o‘lcham",
+      "titleRu": "XS, S, M, L — ваш размер",
+      "textUz": "To‘rt xil o‘lchamdagi quloq yostiqchalaridan quloqingizga eng qulayini tanlang. To‘g‘ri tanlangan yostiqcha quloqda mahkam turadi va tashqi shovqinni yaxshiroq to‘sadi.",
+      "textRu": "Выберите самые удобные амбушюры из четырёх размеров. Правильно подобранный размер надёжно держится в ухе и лучше изолирует от внешнего шума."
+    },
+    {
+      "images": [
+        "01-case.webp"
+      ],
+      "titleUz": "Hammasi bitta to‘plamda",
+      "titleRu": "Всё в одном комплекте",
+      "textUz": "Quloqchinlar ixcham g‘ilofi bilan birga keladi — cho‘ntakka sig‘adi, quloqchinlar doim himoyalangan va qo‘l ostingizda.",
+      "textRu": "Наушники поставляются в компактном кейсе — он помещается в карман, а наушники всегда защищены и под рукой."
+    },
+    {
+      "images": [
+        "02-buds.webp"
+      ],
+      "titleUz": "Zamonaviy va nafis dizayn",
+      "titleRu": "Современный лаконичный дизайн",
+      "textUz": "Silliq oq korpus va ixcham shakl — quloqda ham, qo‘lda ham chiroyli ko‘rinadi.",
+      "textRu": "Гладкий белый корпус и компактная форма — красиво смотрятся и в ушах, и в руке."
+    },
+    {
+      "images": [
+        "05-man.webp",
+        "06-woman.webp"
+      ],
+      "titleUz": "Har kuni siz bilan",
+      "titleRu": "Каждый день с вами",
+      "textUz": "Ishda, o‘qishda va yo‘lda — Pods Pro 2 Premium doimiy hamrohingizga aylanadi.",
+      "textRu": "На работе, учёбе и в дороге — Pods Pro 2 Premium станут вашим постоянным спутником."
+    }
+  ],
+  "comparison": {
+    "titleUz": "Arzon quloqchin yoki Pods Pro 2 Premium?",
+    "titleRu": "Дешёвые наушники или Pods Pro 2 Premium?",
+    "cheapLabelUz": "Arzon quloqchin",
+    "cheapLabelRu": "Дешёвые наушники",
+    "premiumLabelUz": "Pods Pro 2 Premium",
+    "premiumLabelRu": "Pods Pro 2 Premium",
+    "cheapImage": null,
+    "premiumImage": "02-buds.webp",
+    "rows": [
+      {
+        "aspectUz": "Shovqinni qaytarish",
+        "aspectRu": "Шумоподавление",
+        "cheapUz": "Odatda yo‘q — atrof shovqini eshitilib turadi",
+        "cheapRu": "Обычно нет — окружающий шум слышен",
+        "premiumUz": "Faol shovqin qaytarish (ANC)",
+        "premiumRu": "Активное шумоподавление (ANC)"
+      },
+      {
+        "aspectUz": "Quloqqa o‘tirishi",
+        "aspectRu": "Посадка",
+        "cheapUz": "Bitta standart o‘lcham — hammaga ham mos kelmaydi",
+        "cheapRu": "Один стандартный размер — подходит не всем",
+        "premiumUz": "4 o‘lchamdagi yostiqcha: XS, S, M, L",
+        "premiumRu": "Амбушюры 4 размеров: XS, S, M, L"
+      },
+      {
+        "aspectUz": "Xaridorlar tajribasi",
+        "aspectRu": "Опыт покупателей",
+        "cheapUz": "Sharhlar kam yoki umuman yo‘q",
+        "cheapRu": "Отзывов мало или нет совсем",
+        "premiumUz": "Uzum Market’da 27 000+ sotilgan, 10 000+ sharh",
+        "premiumRu": "27 000+ продаж и 10 000+ отзывов на Uzum Market"
+      },
+      {
+        "aspectUz": "Ko‘rinishi",
+        "aspectRu": "Внешний вид",
+        "cheapUz": "Oddiy plastik, arzon ko‘rinadi",
+        "cheapRu": "Простой пластик, выглядит дёшево",
+        "premiumUz": "Silliq korpus va nafis, zamonaviy dizayn",
+        "premiumRu": "Гладкий корпус и аккуратный современный дизайн"
+      }
+    ]
+  }
+}

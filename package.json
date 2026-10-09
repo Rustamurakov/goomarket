@@ -1,0 +1,28 @@
+{
+  "name": "goomarket",
+  "private": true,
+  "version": "2.0.0",
+  "type": "module",
+  "description": "GooMarket — mobil aksessuarlar online do'koni (UZ / RU) va admin panel. Xarid Uzum Market orqali.",
+  "engines": {
+    "node": ">=22.13"
+  },
+  "scripts": {
+    "dev": "vite",
+    "server": "node --disable-warning=ExperimentalWarning --watch-path=server --watch-path=shared server/index.js",
+    "build": "vite build",
+    "start": "node --disable-warning=ExperimentalWarning server/index.js",
+    "create-admin": "node --disable-warning=ExperimentalWarning scripts/create-admin.js",
+    "seed-demo": "node --disable-warning=ExperimentalWarning scripts/seed-demo.js",
+    "build:preview": "GOOMARKET_PREVIEW=1 vite build --outDir dist-preview",
+    "import-example": "node --disable-warning=ExperimentalWarning scripts/import-example.js"
+  },
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.3.4",
+    "vite": "^5.4.11"
+  }
+}
