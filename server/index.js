@@ -357,6 +357,8 @@ function serveApp(req, res) {
     }
   }
   if (url.pathname.startsWith('/admin')) html = setMeta(html, 'name', 'robots', 'noindex, nofollow');
+  // Meta Pixel ID sahifaga meta-teg sifatida beriladi (admin panelda Pixel ishlamaydi)
+  else if (config.metaPixelId) html = setMeta(html, 'name', 'gm-meta-pixel', config.metaPixelId);
   res.writeHead(status, { 'Content-Type': 'text/html; charset=utf-8', 'Cache-Control': 'no-cache' });
   res.end(req.method === 'HEAD' ? undefined : html);
 }

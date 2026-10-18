@@ -34,6 +34,8 @@ export const config = {
   sessionDays: Number(env.SESSION_DAYS) || 7,
   // Ijtimoiy tarmoq preview'lari uchun saytning to'liq manzili, masalan https://goomarket.uz
   publicUrl: (env.PUBLIC_URL || '').replace(/\/+$/, ''),
+  // Meta (Facebook/Instagram) Pixel ID — faqat raqamlar. Bo'sh bo'lsa Pixel o'chiq.
+  metaPixelId: /^\d{8,20}$/.test(String(env.META_PIXEL_ID || '').trim()) ? String(env.META_PIXEL_ID).trim() : '',
 };
 
 export const paths = {

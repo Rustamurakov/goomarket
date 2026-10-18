@@ -123,21 +123,22 @@ export function securityHeaders(res) {
   res.setHeader('Referrer-Policy', 'strict-origin-when-cross-origin');
   res.setHeader('X-Frame-Options', 'DENY');
   res.setHeader('Permissions-Policy', 'camera=(), microphone=(), geolocation=()');
-  // Google Tag Manager yoki Meta Pixel ulasangiz, script-src/connect-src ga ularning domenlarini qo'shing.
+  // Meta Pixel yoqilgan bo'lsa (META_PIXEL_ID), uning domenlariga ruxsat beriladi.
+  const fb = config.metaPixelId;
   res.setHeader(
     'Content-Security-Policy',
     [
       "default-src 'self'",
-      "script-src 'self'",
+      `script-src 'self'${fb ? ' https://connect.facebook.net' : ''}`,
       "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
       "font-src 'self' https://fonts.gstatic.com",
-      "img-src 'self' data: blob: https://i.ytimg.com",
+      `img-src 'self' data: blob: https://i.ytimg.com${fb ? ' https://www.facebook.com' : ''}`,
       "media-src 'self' blob:",
       "frame-src https://www.youtube-nocookie.com",
-      "connect-src 'self'",
+      `connect-src 'self'${fb ? ' https://www.facebook.com https://connect.facebook.net' : ''}`,
       "frame-ancestors 'none'",
       "base-uri 'self'",
-      "form-action 'self'",
+      `form-action 'self'${fb ? ' https://www.facebook.com' : ''}`,
       "object-src 'none'",
     ].join('; '),
   );

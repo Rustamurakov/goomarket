@@ -58,6 +58,13 @@ function emit(next) {
   listeners.forEach((fn) => fn(current));
 }
 
+/** Sahifa almashganda chaqiriladi (analitika uchun). Obunani bekor qiluvchi funksiya qaytaradi. */
+export function onRouteChange(fn) {
+  const wrapped = (r) => fn(r);
+  listeners.add(wrapped);
+  return () => listeners.delete(wrapped);
+}
+
 export const hrefFor = (to) => (MODE === 'hash' ? `#${to}` : to);
 
 function write(to, replace) {

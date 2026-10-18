@@ -1,4 +1,5 @@
 import { ANALYTICS, SITE } from '../config/site.js';
+import { pixelEvent } from './metaPixel.js';
 
 // =====================================================================
 //  UTM va o'tishlar analitikasi
@@ -67,15 +68,14 @@ export function trackEvent(name, payload = {}) {
     window.dataLayer = window.dataLayer || [];
     window.dataLayer.push(data);
   } catch {}
-  try {
-    if (typeof window.fbq === 'function') window.fbq('trackCustom', name, data);
-  } catch {}
+  pixelEvent(name, payload);
   if (import.meta.env?.DEV) console.info('[analytics]', data);
 }
 
 export function trackOutbound(product, placement) {
   trackEvent(ANALYTICS.outboundEventName, {
     product_id: product?.id,
+    product_name: product?.name?.uz,
     product_category: product?.category,
     placement,
     has_real_link: Boolean(product?.uzumUrl),

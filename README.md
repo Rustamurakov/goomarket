@@ -148,7 +148,15 @@ HTTPS sertifikati Caddy orqali avtomatik olinadi. Ma’lumotlar `data/` papkasid
   `https://goomarket.uz/products?utm_source=instagram&utm_campaign=kuz`
 - Bu belgilar saqlanadi va Uzum Market havolasiga qo‘shib yuboriladi.
 - `uzum_click` va `product_view` hodisalari `window.dataLayer` ga yoziladi.
-- **Google Tag Manager yoki Meta Pixel** ulasangiz, ularning domenlarini `server/http-utils.js` dagi Content-Security-Policy ro‘yxatiga qo‘shing. Aks holda brauzer ularni bloklaydi.
+- **Meta Pixel**: hostingda `META_PIXEL_ID` o‘zgaruvchisiga Pixel ID'ni yozing (faqat raqamlar). Kodni o‘zgartirish shart emas. Sayt quyidagi hodisalarni yuboradi:
+  - `PageView` — har bir sahifa ochilganda;
+  - `ViewContent` — mahsulot sahifasi ochilganda;
+  - `InitiateCheckout` — "Uzum Market orqali sotib olish" bosilganda;
+  - `Search` — qidiruvda;
+  - `Contact` — Instagram yoki Telegram tugmasi bosilganda.
+
+  Admin panelda Pixel ishlamaydi. Kerakli Content-Security-Policy ruxsatlari o‘zi qo‘shiladi.
+- **Google Tag Manager** ulasangiz, uning domenlarini `server/http-utils.js` dagi Content-Security-Policy ro‘yxatiga qo‘shing.
 - Sayt faqat Uzum’ga **o‘tishlarni** hisoblaydi. Uzum Market’dagi buyurtma va sotuvlar bu yerda kuzatilmaydi: buning uchun Uzum’ning sotuvchi kabineti hisobotlari kerak.
 
 ---

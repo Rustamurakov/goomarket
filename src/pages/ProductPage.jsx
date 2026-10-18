@@ -373,7 +373,12 @@ export default function ProductPage({ slug }) {
         if (!alive) return;
         if (data.redirect) return navigate(ROUTES.product(data.redirect), { replace: true });
         setState({ product: data.product, status: 'ready' });
-        trackEvent('product_view', { product_id: data.product.id, product_slug: data.product.slug });
+        trackEvent('product_view', {
+          product_id: data.product.id,
+          product_slug: data.product.slug,
+          product_name: data.product.name?.uz,
+          product_category: data.product.category,
+        });
       })
       .catch((err) => {
         if (!alive) return;
